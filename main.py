@@ -9,6 +9,22 @@ class Item(BaseModel):
     n: int
     names: list[str]
 
+    model_config = {
+        "json_schema_extra": {
+            "examples": [
+                {
+                    "n": 2,
+                    "name": [
+                        "Alice",
+                        "Bob",
+                        "Charlotte",
+                        "Dylan"
+                    ]
+                }
+            ]
+        }
+    }
+
 
 @app.put("/creategroups")
 async def creategroups(item: Item):
