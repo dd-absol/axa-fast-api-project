@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from business_logic import create_groups
+from app.business_logic import create_groups
 
 app = FastAPI()
 
@@ -14,7 +14,7 @@ class Item(BaseModel):
             "examples": [
                 {
                     "n": 2,
-                    "name": [
+                    "names": [
                         "Alice",
                         "Bob",
                         "Charlotte",
